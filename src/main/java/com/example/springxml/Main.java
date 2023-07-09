@@ -45,7 +45,7 @@ public class Main {
         StudentCourse studentCourse = studentCourseService.assignStudentToCourse(courseById.getId(), studentById.getId());
         System.out.println(studentCourse);
 
-        System.out.println("\n---------------------GET ALL ACtIVE SERVICES NAMES---------------------");
+        System.out.println("\n---------------------GET ALL ACTIVE SERVICES NAMES---------------------");
         ServiceHolder serviceHolder = context.getBean(ServiceBeanNames.SERVICE_HOLDER_NAME, ServiceHolder.class);
         serviceHolder.getServiceNames();
 
