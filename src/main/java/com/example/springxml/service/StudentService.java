@@ -4,6 +4,7 @@ import com.example.springxml.model.Student;
 
 public class StudentService {
 
+    private String defaultStudentName;
 
     public Student getStudentById(int id) {
 
@@ -15,5 +16,7 @@ public class StudentService {
         return student;
     }
 
-
+    public void setDefaultStudentName(String defaultStudentName) {
+        this.defaultStudentName = defaultStudentName;
+    }
 }

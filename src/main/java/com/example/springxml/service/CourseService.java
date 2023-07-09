@@ -4,14 +4,19 @@ import com.example.springxml.model.Course;
 
 public class CourseService {
 
+    private String defaultCourseName;
+
     public Course getCourseById(int id) {
 
 
         Course course = new Course();
         course.setId(id);
-        course.setName("SOME COURSE NAME BY ID");
+        course.setName(defaultCourseName);
 
         return course;
     }
 
+    public void setDefaultCourseName(String defaultCourseName) {
+        this.defaultCourseName = defaultCourseName;
+    }
 }
