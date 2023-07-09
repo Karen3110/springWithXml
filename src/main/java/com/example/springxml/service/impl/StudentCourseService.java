@@ -1,10 +1,11 @@
-package com.example.springxml.service;
+package com.example.springxml.service.impl;
 
 import com.example.springxml.model.Course;
 import com.example.springxml.model.Student;
 import com.example.springxml.model.StudentCourse;
+import com.example.springxml.service.Service;
 
-public class StudentCourseService {
+public class StudentCourseService implements Service {
     private StudentService studentService;
     private CourseService courseService;
 
@@ -32,5 +33,10 @@ public class StudentCourseService {
 
     public void setCourseService(CourseService courseService) {
         this.courseService = courseService;
+    }
+
+    @Override
+    public String getClassName() {
+        return getClass().getName();
     }
 }

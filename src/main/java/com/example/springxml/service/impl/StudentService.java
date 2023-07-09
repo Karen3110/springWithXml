@@ -1,8 +1,9 @@
-package com.example.springxml.service;
+package com.example.springxml.service.impl;
 
 import com.example.springxml.model.Student;
+import com.example.springxml.service.Service;
 
-public class StudentService {
+public class StudentService implements Service {
 
     private String defaultStudentName;
 
@@ -18,5 +19,10 @@ public class StudentService {
 
     public void setDefaultStudentName(String defaultStudentName) {
         this.defaultStudentName = defaultStudentName;
+    }
+
+    @Override
+    public String getClassName() {
+        return getClass().getName();
     }
 }

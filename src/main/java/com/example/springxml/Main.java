@@ -4,10 +4,11 @@ import com.example.springxml.model.Course;
 import com.example.springxml.model.Student;
 import com.example.springxml.model.StudentCourse;
 import com.example.springxml.model.Teacher;
-import com.example.springxml.service.CourseService;
-import com.example.springxml.service.StudentCourseService;
-import com.example.springxml.service.StudentService;
-import com.example.springxml.service.TeacherService;
+import com.example.springxml.service.ServiceHolder;
+import com.example.springxml.service.impl.CourseService;
+import com.example.springxml.service.impl.StudentCourseService;
+import com.example.springxml.service.impl.StudentService;
+import com.example.springxml.service.impl.TeacherService;
 import com.example.springxml.util.ServiceBeanNames;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -43,6 +44,10 @@ public class Main {
         System.out.println("\n---------------------GET STUDENT AND COURSE MAPPING---------------------");
         StudentCourse studentCourse = studentCourseService.assignStudentToCourse(courseById.getId(), studentById.getId());
         System.out.println(studentCourse);
+
+        System.out.println("\n---------------------GET ALL ACtIVE SERVICES NAMES---------------------");
+        ServiceHolder serviceHolder = context.getBean(ServiceBeanNames.SERVICE_HOLDER_NAME, ServiceHolder.class);
+        serviceHolder.getServiceNames();
 
     }
 }

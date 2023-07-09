@@ -6,4 +6,6 @@ public class ServiceBeanNames {
     public static final String RANDOM_NUMBERS_GENERATOR = "randomNumberGenerator";
     public static final String TEACHER_SERVICE_NAME = "teacherService";
     public static final String STUDENT_COURSE_SERVICE = "studentCourseService";
+    public static final String SERVICE_HOLDER_NAME = "serviceHolder";
+    public static final String SERVICE_HOLDER_FACTORY = "serviceHolderFactory";
 }
