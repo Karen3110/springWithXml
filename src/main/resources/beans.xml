@@ -12,15 +12,15 @@
     <!--    Util Beans Section  end -->
 
     <!--    Service Beans Section start-->
-    <bean name="studentService" class="com.example.springxml.service.StudentService">
+    <bean name="studentService" class="com.example.springxml.service.StudentService" >
         <property name="defaultStudentName" value="Wahram"/>
     </bean>
     <bean name="courseService" class="com.example.springxml.service.CourseService">
         <property name="defaultCourseName" value="Java Professional"/>
     </bean>
-    <bean name="studentCourseService" class="com.example.springxml.service.StudentCourseService">
-        <property  name="courseService" ref="courseService"/>
-        <property name="studentService" ref="studentService"/>
+    <bean name="studentCourseService" class="com.example.springxml.service.StudentCourseService" autowire="byType" >
+        <property  name="courseService"  ref="courseService"/>  <!-- inject force-->
+<!--        <property name="studentService" ref="studentService"/>-->  <!-- inject automaticaly by type-->
     </bean>
     <bean name="teacherService" class="com.example.springxml.service.TeacherService">
         <constructor-arg name="courseService" ref="courseService"/>
