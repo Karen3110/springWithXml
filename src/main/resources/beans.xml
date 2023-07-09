@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- more bean definitions go here -->
+
+    <!--    Util Beans Section  start -->
+    <bean name="randomNumberGenerator" class="java.util.Random"/>
+    <bean name="gson" class="com.google.gson.Gson"/>
+    <!--    Util Beans Section  end -->
+
+    <!--    Service Beans Section start-->
+    <bean name="studentService" class="com.example.springxml.service.StudentService"/>
+    <bean name="courseService" class="com.example.springxml.service.CourseService"/>
+    <bean name="studentCourseService" class="com.example.springxml.service.StudentCourseService">
+        <property  name="courseService" ref="courseService"/>
+        <property name="studentService" ref="studentService"/>
+    </bean>
+    <bean name="teacherService" class="com.example.springxml.service.TeacherService">
+        <constructor-arg name="courseService" ref="courseService"/>
+    </bean>
+    <!--    Service Beans Section start-->
+
+
+    <!--    Model Beans Section start-->
+
+    <!--    Model Beans Section end-->
+</beans>
